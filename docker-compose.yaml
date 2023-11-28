@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: go_blog_backend:1.0.0
+    env_file:
+      - .env
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    volumes:
+      - go_blog_backend_logs:/app/logs
+    # depends_on:
+    #   - database
+    #   - migrate
+
+volumes:
+  go_blog_backend_logs:
+    name: go_blog_backend_logs

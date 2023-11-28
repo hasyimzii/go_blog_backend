@@ -77,7 +77,7 @@ In this app, there are 3 actors:
 - User : User who has acces to manage, find, like, and comment post
 
 ## ERD and database
-<!-- ![erd](./docs/erd.jpg) -->
+![erd](./docs/erd.png)
 
 
 ## Packages used
