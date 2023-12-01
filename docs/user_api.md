@@ -2,20 +2,20 @@
 
 ---
 
-# Get User
+## Get User
 
 ---
 
-# Single User
+## Single User
 
 ---
 
-# Create User
+## Create User
 
 ---
 
-# Update User
+## Update User
 
 ---
 
-# Delete User
+## Delete User

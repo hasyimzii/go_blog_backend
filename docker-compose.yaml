@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   app:
+    container_name: app
     build: 
       context: .
       dockerfile: Dockerfile
@@ -12,10 +13,34 @@ services:
       - ${APP_PORT}:${APP_PORT}
     volumes:
       - go_blog_backend_logs:/app/logs
-    # depends_on:
-    #   - database
-    #   - migrate
+    depends_on:
+      - database
+      - migration
+  database:
+    container_name: database
+    image: postgres:15-alpine
+    env_file:
+      - .env
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    volumes:
+      - go_blog_backend_postgres:/var/lib/postgresql/data
+  migration:
+    container_name: migration
+    image: migrate/migrate:latest
+    env_file:
+      - .env
+    volumes:
+      - go_blog_backend_migrations:/app/migrations
+    command: ["-path", "/migrations", "-database",  "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?sslmode=disable"]
+    depends_on:
+      - database
+
 
 volumes:
   go_blog_backend_logs:
     name: go_blog_backend_logs
+  go_blog_backend_postgres:
+    name: go_blog_backend_postgres
+  go_blog_backend_migrations:
+    name: go_blog_backend_migrations

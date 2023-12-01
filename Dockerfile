@@ -8,6 +8,7 @@ FROM alpine:3
 
 WORKDIR /app
 COPY --from=builder /app/.env .
+COPY --from=builder /app/app/databases/migrations/ ./migrations/
 COPY --from=builder /app/bin .
 
 EXPOSE ${APP_PORT}
