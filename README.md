@@ -70,19 +70,21 @@ docker volume rm go_blog_backend_logs
 ---
 
 ## Usecase diagram
-![usecase](./docs/usecase.png)
+![usecase](./docs/diagrams/usecase.png)
 
 In this app, there are 3 actors:
 - Admin : User who has access to block posts
 - User : User who has acces to manage, find, like, and comment post
 
 ## ERD and database
-![erd](./docs/erd.png)
+![erd](./docs/diagrams/erd.png)
 
+- // TODO: Migrations folder [./app/databases/migrations/](https://github.com/hasyimzii/go_blog_backend/tree/main/docs/api)
 
 ## Packages used
 
 ## API documentation
+- API docs folder [./docs/api/](https://github.com/hasyimzii/go_blog_backend/tree/main/docs/api)
 
 ## Login credentials
 
