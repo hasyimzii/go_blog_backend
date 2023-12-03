@@ -84,7 +84,7 @@ In this app, there are 3 actors:
 ## Packages used
 
 ## API documentation
-- API docs folder [./docs/api/](https://github.com/hasyimzii/go_blog_backend/tree/main/docs/api)
+- API docs folder [./docs/api/](./docs/api/)
 
 ## Login credentials
 
