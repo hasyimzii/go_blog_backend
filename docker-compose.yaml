@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   app:
-    container_name: app
     build: 
       context: .
       dockerfile: Dockerfile
@@ -17,7 +16,6 @@ services:
       - database
       - migration
   database:
-    container_name: database
     image: postgres:15-alpine
     env_file:
       - .env
@@ -26,7 +24,6 @@ services:
     volumes:
       - go_blog_backend_postgres:/var/lib/postgresql/data
   migration:
-    container_name: migration
     image: migrate/migrate:latest
     env_file:
       - .env

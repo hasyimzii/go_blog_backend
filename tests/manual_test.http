@@ -1,0 +1,10 @@
+# Manual test using REST Client extension in VSCode
+
+# Variables
+@baseUrl = http://localhost:3000
+
+### Get User List
+GET {{baseUrl}}/users
+
+### Get User List (with pagination)
+GET {{baseUrl}}/users

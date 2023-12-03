@@ -6,9 +6,9 @@ REST API app for blog post management using Go and PostgreSQL. This app, is purp
 - [How to install (using Docker)](#how-to-install-using-docker)
 - [Usecase diagram](#usecase-diagram)
 - [ERD and database](#erd-and-database)
-- [Packages used](#packages-used)
+- [External library](#external-library)
 - [API documentation](#api-documentation)
-- [Login credentials](#login-credentials)
+- [Login dummy](#login-dummy)
 - [Logging](#logging)
 - [Unit test](#unit-test)
 - [Manual test](#manual-test)
@@ -65,6 +65,8 @@ docker composer up -d
 docker compose down
 docker image rm go_blog_backend:1.0.0
 docker volume rm go_blog_backend_logs
+docker volume rm go_blog_backend_postgres
+docker volume rm go_blog_backend_migrations
 ```
 
 ---
@@ -72,26 +74,46 @@ docker volume rm go_blog_backend_logs
 ## Usecase diagram
 ![usecase](./docs/diagrams/usecase.png)
 
-In this app, there are 3 actors:
-- Admin : User who has access to block posts
-- User : User who has acces to manage, find, like, and comment post
+In this app, there are 2 actors:
+- Admin : User who has access to find and block posts
+- User : User who has acces to manage, find, like, comment, and request block post
 
 ## ERD and database
 ![erd](./docs/diagrams/erd.png)
 
+- Database service: PostgreSQL
 - Database migrations folder [./app/migrations/](./app/migrations/)
 
-## Packages used
+## External library
+- [joho/godotenv](https://github.com/joho/godotenv)
+- [gofiber/fiber](https://github.com/gofiber/fiber)
+- TODO: external lib list
 
 ## API documentation
-- API docs folder [./docs/api/](./docs/api/)
+- API documentation folder [./docs/api/](./docs/api/)
+- All API specification documented using Markdown
 
-## Login credentials
+## Login dummy
+```
+// Admin
+Email: admin@mail.com
+Pass: admin123
+```
+```
+// User
+Email: user@mail.com
+Pass: user123
+```
 
 ## Logging
+- Logging folder [./logs/](./logs/)
+- The logging output stored in ```app.log``` file
 
 ## Unit test
 ```Requirement: Go Programming Language```
 
-## Manual test
-```If using VSCode, Requirement: REST Client by Huachao Mao```
+- Unit testing folder [./tests/](./tests/)
+- Run this command in terminal
+```go
+go test -v ./tests
+```
