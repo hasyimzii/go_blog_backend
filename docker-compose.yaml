@@ -32,7 +32,7 @@ services:
       - .env
     volumes:
       - go_blog_backend_migrations:/app/migrations
-    command: ["-path", "/migrations", "-database",  "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?sslmode=disable"]
+    command: ["-database",  "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?sslmode=disable", "-path", "app/migrations", "up"]
     depends_on:
       - database
 

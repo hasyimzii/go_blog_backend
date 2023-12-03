@@ -32,7 +32,7 @@ CREATE DATABASE go_blog_backend;
 ```
 4. Run migrations
 ```sh
-# TODO: run migration
+migrate -database postgres://<username>:<password>@localhost:5432/go_blog_backend?sslmode=disable -path app/migrations up
 ```
 5. Build Go app
 ```go
@@ -79,7 +79,7 @@ In this app, there are 3 actors:
 ## ERD and database
 ![erd](./docs/diagrams/erd.png)
 
-- // TODO: Migrations folder [./app/databases/migrations/](https://github.com/hasyimzii/go_blog_backend/tree/main/docs/api)
+- Database migrations folder [./app/migrations/](./app/migrations/)
 
 ## Packages used
 
