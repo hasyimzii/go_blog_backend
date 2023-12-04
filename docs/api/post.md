@@ -10,7 +10,15 @@
 ---
 
 ## Get Post (Not Blocked)
-<!-- TODO: query -->
+Endpoint: ```GET``` /posts
+
+Query Parameter:
+```sh
+page=1
+limit=10 (optional)
+search=post-title (optional)
+```
+
 ---
 
 ## Single Post

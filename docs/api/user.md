@@ -109,7 +109,9 @@ Response Error (401):
 Endpoint: ```POST``` /logout
 
 Request Header:
-- Authorization: auth-token
+```sh
+Authorization: auth-token
+```
 
 Response Success (200):
 ```json
@@ -132,7 +134,9 @@ Response Error (401):
 Endpoint: ```GET``` /users/current
 
 Request Header:
-- Authorization: auth-token
+```sh
+Authorization: auth-token
+```
 
 Response Success (200):
 ```json
@@ -161,7 +165,9 @@ Response Error (401):
 Endpoint: ```PATCH``` /users/current
 
 Request Header:
-- Authorization: auth-token
+```sh
+Authorization: auth-token
+```
 
 Request Body (not all attributes required):
 ```json
